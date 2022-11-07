@@ -12,7 +12,9 @@ set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 
 #set(CMAKE_BUILD_TYPE Debug)
 
-set(CMAKE_CXX_FLAGS "-Wno-deprecated-declarations")
+if(CMAKE_COMPILER_IS_GNUCC)
+    set(CMAKE_CXX_FLAGS "-Wno-deprecated-declarations")
+endif()
 
 include(ExternalAnalyzerSDK)
 
